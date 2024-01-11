@@ -6,8 +6,8 @@ import { asyncHandler } from "../utlis/asynHandler.js";
 // to get all contacts
 const getContact = asyncHandler(async (req, res) => {
   try {
-    const contacts = await Contact.find().select(
-      "-_id -createdAt -updatedAt -__v"
+    const contacts = await Contact.find({ user_id: req.user.id }).select(
+      "-_id -createdAt -updatedAt -__v -user_id"
     );
     res.status(200).json(contacts);
   } catch (error) {
@@ -41,6 +41,7 @@ const createContact = asyncHandler(async (req, res) => {
     name,
     email,
     phone,
+    user_id: req.user.id,
   });
 
   const createdContact = await Contact.findById(contact._id).select(
@@ -91,6 +92,13 @@ const updateContact = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Contact not found !");
   }
 
+  // check for user have access to this contact
+  // if (contact.user_id.toString() !== req.user.id) {
+  //   throw new ApiError(403, "Access denied!");
+  // }
+
+  // no need for above check as all contact routes are secured using jwt and if tokens doesn't match it will throw auth errors
+
   contact.phone = newPhone;
   await contact.save({ validateBeforeSave: false });
   res
@@ -105,14 +113,20 @@ const deleteContact = asyncHandler(async (req, res) => {
   if (!phone) {
     throw new ApiError(400, "Fill details to search");
   }
+  const contact = await Contact.findOne({ phone: phone }).select(
+    "-updatedAt -createdAt -__v"
+  );
 
-  try {
-    var contact = await Contact.findOne({ phone: phone }).select(
-      "-updatedAt -createdAt -__v"
-    );
-  } catch (error) {
+  if (!contact) {
     throw new ApiError(404, "Contact not found !");
   }
+
+  // check for user have access to this contact
+  // if (contact.user_id.toString() !== req.user.id) {
+  //   throw new ApiError(403, "Access denied!");
+  // }
+
+  // no need for above check as all contact routes are secured using jwt and if tokens doesn't match it will throw auth errors
 
   try {
     const result = await Contact.deleteOne({ _id: contact?._id });

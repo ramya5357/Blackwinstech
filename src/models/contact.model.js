@@ -18,6 +18,11 @@ const contactSchema = new Schema(
       required: [true, "Please add number !"],
       unique: true,
     },
+    user_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,
