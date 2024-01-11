@@ -1,6 +1,6 @@
 # Contact Management Server for multiple Users using Nodejs, Expressjs & MongoDB
 
-Welcome to the **Contact Management Server** documentation! This backend application is built using Node.js, Express.js, and MongoDB, providing a robust and scalable solution for managing contact information. It also manages users enrolled and thier regular **CRUD** operations.This documentation is your comprehensive guide for interacting with Contact Management Server.
+Welcome to the **Contact Management Server** documentation! This backend application is built using Node.js, Express.js, and MongoDB, providing a robust and scalable solution for managing contact information. It also manages users enrolled and thier regular **CRUD** operations. This documentation is your comprehensive guide for interacting with Contact Management Server.
 
 ## Features
 
