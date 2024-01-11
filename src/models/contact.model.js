@@ -5,10 +5,13 @@ const contactSchema = new Schema(
     name: {
       type: String,
       required: [true, "Please add name !"],
+      trim: true,
     },
     email: {
       type: String,
       required: [true, "Please add email !"],
+      trim: true,
+      index: true,
     },
     phone: {
       type: Number,
