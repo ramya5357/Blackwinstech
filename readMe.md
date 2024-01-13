@@ -1,14 +1,14 @@
 # Contact Management Server for multiple Users using Nodejs, Expressjs & MongoDB
 
-Welcome to the **Contact Management Server** documentation! This backend application is built using Node.js, Express.js, and MongoDB, providing a robust and scalable solution for managing contact information. It also manages users enrolled and thier regular **CRUD** operations. This documentation is your comprehensive guide for interacting with Contact Management Server.
+Welcome to the **Contact Management Server** documentation! This backend application is built using Node.js, Express.js, and MongoDB, providing a robust and scalable solution for managing contact information. It also manages users enrolled and their regular **CRUD** operations. This documentation is your comprehensive guide for interacting with the Contact Management Server.
 
 ## Features
 
 - **User mangement:**
 
   - `Create Users:` Add new users with essential details such as name, email, username & password.
-  - `Log IN/OUT Users:` Securely login and logout of user session.
-  - `Logged in User info:` Fetch details of loggedIn user account.
+  - `Log IN/OUT Users:` Securely login and logout of the user session.
+  - `Logged in User info:` Fetch details of logged in user account.
   - `Secure Authentication:` Access the user login session securely using JSON Web Tokens (JWT) for authentication.
   - `Secure Password Storage:` Passwords which are hashed using bcrypt & then stored in the database.
 
@@ -114,7 +114,7 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 ```
 
 - **Response:**
-  - `statusCode`: exit code for resquest
+  - `statusCode`: exit code for request
   - `data`: relevant user data
   - `message`: relevant request message
   - `success`: boolean to check for successfull completion
@@ -131,7 +131,7 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
     "updatedAt": "2024-01-11T21:34:16.904Z",
     "__v": 0
   },
-  "message": "User registed successfully !",
+  "message": "User registered successfully !",
   "success": true
 }
 ```
@@ -152,10 +152,10 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 ```
 
 - **Response:**
-  - `statusCode`: exit code for resquest
+  - `statusCode`: exit code for request
   - `data`: relevant user data
   - `message`: relevant request message
-  - `success`: boolean to check for successfull completion
+  - `success`: boolean to check for successful completion
 
 ```json
 {
@@ -182,13 +182,13 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 
 - **Request:**
 
-  - Empty get request, authentication while be done using access token in cookies.
+  - Empty get request, authentication will be done using the access token in cookies.
 
 - **Response:**
-  - `statusCode`: exit code for resquest
+  - `statusCode`: exit code for request
   - `data`: relevant user data
   - `message`: relevant request message
-  - `success`: boolean to check for successfull completion
+  - `success`: boolean to check for successful completion
 
 ```json
 {
@@ -213,13 +213,13 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 
 - **Request:**
 
-  - Empty get request, authentication while be done using access token in cookies.
+  - Empty get request, authentication will be done using the access token in cookies.
 
 - **Response:**
-  - `statusCode`: exit code for resquest
+  - `statusCode`: exit code for request
   - `data`: relevant user data
   - `message`: relevant request message
-  - `success`: boolean to check for successfull completion
+  - `success`: boolean to check for successful completion
 
 ```json
 {
@@ -250,10 +250,10 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 ```
 
 - **Response:**
-  - `statusCode`: exit code for resquest
+  - `statusCode`: exit code for request
   - `data`: relevant user data
   - `message`: relevant request message
-  - `success`: boolean to check for successfull completion
+  - `success`: boolean to check for successful completion
 
 ```json
 {
@@ -276,10 +276,10 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 
 - **Request:**
 
-  - Empty get request, authentication while be done using access token in cookies.
+  - Empty get request, authentication will be done using the access token in cookies.
 
 - **Response:**
-  - Array of contacts for respective user
+  - Array of contacts for the respective user
 
 ```json
 [
@@ -346,7 +346,7 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
   - `statusCode`: exit code for resquest
   - `data`: relevant user data
   - `message`: relevant request message
-  - `success`: boolean to check for successfull completion
+  - `success`: boolean to check for successful completion
 
 ```json
 {
@@ -378,10 +378,10 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 ```
 
 - **Response:**
-  - `statusCode`: exit code for resquest
+  - `statusCode`: exit code for request
   - `data`: relevant user data
   - `message`: relevant request message
-  - `success`: boolean to check for successfull completion
+  - `success`: boolean to check for successful completion
 
 ```json
 {
@@ -400,7 +400,7 @@ REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access t
 
 ## Error Handling
 
-The server returns appropriate error responses for invalid requests or authentication issues with regard a customized js configuration named as `ApiError.js`.
+The server returns appropriate error responses for invalid requests or authentication issues with regard to a customized js configuration named `ApiError.js`.
 
 - **501 Sever Error:**
 
@@ -408,7 +408,7 @@ The server returns appropriate error responses for invalid requests or authentic
 
   ```json
   {
-    "Error": "Something went wrong with server !"
+    "Error": "Something went wrong with the server !"
   }
   ```
 
@@ -444,7 +444,7 @@ The server returns appropriate error responses for invalid requests or authentic
 
 ## Response Handling
 
-The server returns appropriate success responses for valid requests or authentications with regard a customized js configuration named as `ApiResponse.js`.
+The server returns appropriate success responses for valid requests or authentications with regard to a customized js configuration named `ApiResponse.js`.
 
 - **200 Success message:**
 
@@ -460,6 +460,12 @@ The server returns appropriate success responses for valid requests or authentic
 
 ## Running the Server
 
+to install dependencies:
+
+```bash
+npm install
+```
+
 To start the server, run the following command:
 
 ```bash
@@ -468,7 +474,7 @@ npm run dev
 
 The server will be running on the specified port, and you can make requests to the provided API endpoints.
 
-- all the request must be predicated with `/api/v1` to specify api version; can be changed in `app.js`.
+- all the requests must be predicated with `/api/v1` to specify the API version; this can be changed in `app.js`.
 
 Sample URLs :
 
