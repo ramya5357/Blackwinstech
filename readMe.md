@@ -45,7 +45,28 @@ Welcome to the **Contact Management Server** documentation! This backend applica
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites for Container via Docker
+- [MongoDB server](#https://www.mongodb.com/)
+- [Docker Setup](https://docs.docker.com/engine/install/)
+
+### Installation 
+
+```bash
+docker run  -p 3000:<container-port> \
+-e PORT=<container-port>t \
+-e MONGODB_URI=<your-mongodb-compass-connection-string (without last '/')> \
+-e ACCESS_TOKEN_SECRET=<your-access-token> \
+-e ACCESS_TOKEN_EXPIRY=<your-access-token-duration (eg: 1 day -> 1d)> \
+-e REFRESH_TOKEN_SECRET=<your-refresh-token> \
+-e REFRESH_TOKEN_EXPIRY=<your-refresh-token-duration *must be greater than access token*(eg: 10 day -> 10d)> \
+--name contact-management-backend \
+syash7202/contact-management-backend
+```
+
+Specify you environment variables. This will start a container at port 3000 on you host machine.
+
+
+### Prerequisites for manual installation
 
 Before you start using the Contact Management Server, make sure you have the following installed:
 

@@ -5,7 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/server.js  "
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/server.js  ",
+
+    "start": "nodemon src/server.js"
   },
   "keywords": [
     "nodejs",
