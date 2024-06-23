@@ -46,7 +46,7 @@ Welcome to the **Contact Management Server** documentation! This backend applica
 ## Getting Started
 
 ### Prerequisites for Container via Docker
-- [MongoDB server](#https://www.mongodb.com/)
+- [MongoDB server](https://www.mongodb.com/)
 - [Docker Setup](https://docs.docker.com/engine/install/)
 
 ### Installation 
@@ -70,9 +70,9 @@ Specify you environment variables. This will start a container at port 3000 on y
 
 Before you start using the Contact Management Server, make sure you have the following installed:
 
-- [Node.js](#https://nodejs.org/)
-- [npm (Node Package Manager)](#https://www.npmjs.com/)
-- [MongoDB server](#https://www.mongodb.com/)
+- [Node.js](https://nodejs.org/)
+- [npm (Node Package Manager)](https://www.npmjs.com/)
+- [MongoDB server](https://www.mongodb.com/)
 
 ### Installation
 
